@@ -20,24 +20,22 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-
-        int nums[] = {2,7,11,15};
-        int[] ans = indexOfSum(nums,9);
+        int[] num = {2,7,11,15};
+        int[] ans = indexOfSum(num,9);
         System.out.println(ans[0] +""+ans[1] );
     }
 
-    private static int[] indexOfSum(int nums[],int target) {
+    private static int[] indexOfSum(int num[],int target) {
         Map<Integer,Integer> map = new HashMap<>();
         int[] ans = {-1,-1};
-        for(int i=0;i< nums.length;i++) {
-            if(map.containsKey(target-nums[i])) {
-                ans[0] = map.get(target-nums[i]);
+        for(int i=0;i< num.length;i++) {
+            if(map.containsKey(target-num[i])) {
+                ans[0] = map.get(target-num[i]);
                 ans[1] = i;
             } else {
-                map.put(nums[i],i);
+                map.put(num[i],i);
             }
         }
-
         return ans;
     }
 }
